@@ -17,7 +17,7 @@ end
 disp("Rozkład stacjonarny dla alfa = " + alfa + ":")
 disp(PI_i)
 %sprawdzenie
-A = PI_i * MG;
+%A = PI_i * MG;
 %disp("Sprawdzenie PI*MG:")
 %disp(A)
 
