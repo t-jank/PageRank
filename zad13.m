@@ -24,7 +24,20 @@ disp(mprawdop32(1,4))
 %%%%% podpunkt c %%%%%
 mprawdop128 = P^128;
 disp("Prawdopodobieństwo znalezienia się w stanie 3 po 128 krokach jeśli zaczynamy w losowym stanie:")
-disp(mprawdop128(1,4) + mprawdop128(2,4) + mprawdop128(3,4) + mprawdop128(4,4))
+disp(sum(mprawdop128(:,4))/n)
 
 %%%%% podpunkt d %%%%%
-
+epsilon = 1/10;  % 1/10, 1/100, 1/1000
+for t=1:100000
+    Pt=P^t;
+    PI_Pt = zeros(1,n)+1/n;
+    for i=0:99
+        PI_Pt = PI_Pt * Pt;
+    end
+    if min(abs(PI_Pt(1,:))) <= epsilon
+        disp(t)
+        break
+    end
+end
+disp("Najmniejsza wartość liczby kroków dla epsilon = " + epsilon)
+disp(t)
