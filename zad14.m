@@ -8,10 +8,11 @@ PG = [0   1/2 1/2  0   0;
       1/5 1/5 1/5 1/5 1/5;];
 MG = (1-alfa)*PG + alfa*1/n*Jn;
 PI_i = zeros(1,n)+1/n;
-disp("PI_0:")
-disp(PI_i)
+%disp("PI_0:")
+%disp(PI_i)
 for i=1:25
     PI_i = PI_i * MG;
-    disp("PI_" + i + ":")
-    disp(PI_i)
+   % disp("PI_" + i + ":")
+  %  disp(PI_i)
+    blad = sum(abs(PI_i-PI_i*MG))
 end
