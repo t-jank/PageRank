@@ -53,3 +53,10 @@ for a = 1:7
     xlabel('\alpha = \{0,  0.15,  0.25,  0.5,  0.75,  0.85,  1\}')
     ylabel("\pi(i) (kryterium rankingu PageRank)")
 end
+
+%% Wnioski z 2 wykresu:
+%% Wartość parametru alfa ma wpływ na kolejność stron w rankingu PageRank, co widać na wykresie, gdy czwarta strona (różowa)
+%% wyprzedza pierwszą (niebieską) od alfa=0.5. Odpowiedź odpowiada intuicji (edit: nie jestem przekonany jednak czy tak powinno
+%% być), ponieważ współczynnik znudzenia alfa decyduje o przewadze losowego skoku na inną stronę lub przechodzeniu po linkach.
+%% Widać też wyraźnie, iż wraz ze wzrostem współczynnika znudzenia alfa maleje różnica w rankingu między stronami. Jest tak,
+%% ponieważ większego znaczenia nabiera losowy skok, a wpływ linków maleje.
