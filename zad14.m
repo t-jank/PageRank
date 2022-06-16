@@ -1,5 +1,5 @@
 n = 5;
-alfa = 0.25; % 0, 0.25, 0.5, 0.75, 0.85, 1
+alfa = 0.15; % 0, 0.25, 0.5, 0.75, 0.85, 1
 Jn = zeros(n,n)+1;
 PG = [0   1/2 1/2  0   0;
       0    0   0   1   0;
@@ -15,4 +15,8 @@ for i=1:25
    % disp("PI_" + i + ":")
   %  disp(PI_i)
     blad = sum(abs(PI_i-PI_i*MG))
+    plot(i,blad,'.','MarkerSize',20,'MarkerEdgeColor','b'); hold on; grid on
+    title("alfa = " + alfa)
+    xlabel('i')
+    ylabel('Błąd (|PI_i-PI_i*MG|)')
 end
