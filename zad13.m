@@ -28,14 +28,13 @@ disp(sum(mprawdop128(:,4))/n)
 
 %%%%% podpunkt d %%%%%
 epsilon = 1/10;  % 1/10, 1/100, 1/1000
-for t=1:100000
+for t=1:1000
     Pt=P^t;
     PI_Pt = zeros(1,n)+1/n;
     for i=0:99
         PI_Pt = PI_Pt * Pt;
     end
-    if min(abs(PI_Pt(1,:))) <= epsilon
-        disp(t)
+    if max(abs(Pt(1,:) - PI_Pt)) <= epsilon
         break
     end
 end
